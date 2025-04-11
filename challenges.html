@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CodeCon - Challenges</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f0f0f;
+      color: #fff;
+    }
+
+    nav {
+      background: #000;
+      padding: 15px 25px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #00ffc8;
+    }
+
+    nav .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav .nav-links a {
+      color: #00ffc8;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .login-btn {
+      margin-left: auto;
+      background: #00ffc8;
+      color: #000;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background: #00cfa0;
+    }
+
+    .container {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: #00ffc8;
+      text-align: center;
+    }
+
+    .challenge-card {
+      background: #1a1a1a;
+      border: 1px solid #00ffc8;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      transition: transform 0.2s ease;
+    }
+
+    .challenge-card:hover {
+      transform: scale(1.02);
+    }
+
+    .challenge-card h3 {
+      color: #00ffc8;
+    }
+
+    .challenge-card p {
+      color: #ccc;
+    }
+
+    /* AI Assistant */
+    .ai-assistant {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      display: flex;
+      align-items: flex-end;
+      gap: 15px;
+    }
+
+    .ai-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-image: url('image.png');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      box-shadow: inset 0 0 8px #00ffc8, 0 0 15px rgba(0, 255, 200, 0.3);
+      cursor: pointer;
+    }
+
+    .eye-container {
+      position: absolute;
+      top: 26%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+    }
+
+    .eye {
+      width: 12px;
+      height: 12px;
+      background-color: #000;
+      border: 2px solid #00ffc8;
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .pupil {
+      width: 6px;
+      height: 6px;
+      background: #00ffc8;
+      border-radius: 50%;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      transition: all 0.1s ease-out;
+    }
+
+    .smile {
+      position: absolute;
+      bottom: 18%;
+      left: 50%;
+      width: 24px;
+      height: 10px;
+      border-bottom: 2px solid #00ffc8;
+      border-radius: 0 0 50px 50px;
+      transform: translateX(-50%);
+      opacity: 0.6;
+    }
+
+    .ai-chatbox {
+      display: none;
+      flex-direction: column;
+      background: rgba(0, 0, 0, 0.95);
+      border: 1px solid #00ffc8;
+      border-radius: 12px;
+      padding: 14px;
+      width: 240px;
+      box-shadow: 0 0 20px rgba(0, 255, 200, 0.15);
+      font-size: 14px;
+      color: #d0f0c0;
+    }
+
+    .ai-chatbox textarea {
+      width: 100%;
+      height: 60px;
+      margin-top: 10px;
+      border-radius: 8px;
+      padding: 8px;
+      background: #000;
+      color: #00ffc8;
+      border: 1px solid #00ffc8;
+      resize: none;
+    }
+
+    .ai-chatbox button {
+      margin-top: 10px;
+      padding: 8px;
+      background: #00ffc8;
+      border: none;
+      color: black;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .ai-chatbox button:hover {
+      background: #00cfa0;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="challenges.html">Challenges</a>
+      <a href="compiler.html">Compiler</a>
+      <a href="courses.html">Courses</a>
+      <a href="subscription.html">Subscription</a>
+      <a href="profile.html">Profile</a>
+    </div>
+    <a class="login-btn" href="login.html">Login</a>
+  </nav>
+
+  <div class="container">
+    <h1>Practice Challenges</h1>
+
+    <div class="challenge-card">
+      <h3>Sorting Algorithms</h3>
+      <p>Implement and compare bubble sort, quick sort, and merge sort algorithms.</p>
+    </div>
+
+    <div class="challenge-card">
+      <h3>String Manipulation</h3>
+      <p>Write functions to handle various string operations such as reversing, capitalizing, and finding substrings.</p>
+    </div>
+
+    <div class="challenge-card">
+      <h3>Dynamic Programming</h3>
+      <p>Solve classic DP problems like 0/1 Knapsack, Longest Increasing Subsequence, and Matrix Chain Multiplication.</p>
+    </div>
+  </div>
+
+  <!-- AI Assistant -->
+  <div class="ai-assistant">
+    <div class="ai-chatbox" id="bepo-chat">
+      <p><strong>Bepo:</strong> Ask me about your weak areas, and I’ll recommend challenges & courses!</p>
+      <textarea placeholder="Ask me anything..."></textarea>
+      <button>Ask Bepo</button>
+    </div>
+    <div class="ai-icon" id="bepo-icon" title="Talk to Bepo">
+      <div class="eye-container">
+        <div class="eye"><div class="pupil"></div></div>
+        <div class="eye"><div class="pupil"></div></div>
+      </div>
+      <div class="smile"></div>
+    </div>
+  </div>
+
+  <script>
+    // Toggle Bepo chat
+    const bepoIcon = document.getElementById('bepo-icon');
+    const bepoChat = document.getElementById('bepo-chat');
+
+    bepoIcon.addEventListener('click', () => {
+      bepoChat.style.display = bepoChat.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    // Track mouse for eye movement
+    const pupils = document.querySelectorAll('.pupil');
+    document.addEventListener('mousemove', (e) => {
+      const icon = bepoIcon.getBoundingClientRect();
+      const centerX = icon.left + icon.width / 2;
+      const centerY = icon.top + icon.height / 2;
+      const deltaX = (e.clientX - centerX) / 20;
+      const deltaY = (e.clientY - centerY) / 20;
+
+      pupils.forEach(pupil => {
+        pupil.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+      });
+    });
+  </script>
+</body>
+</html>

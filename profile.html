@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CodeCon - Profile</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f0f0f;
+      color: #ffffff;
+    }
+
+    nav {
+      background-color: #000000;
+      padding: 15px 25px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #00ffc8;
+    }
+
+    nav .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav .nav-links a {
+      color: #00ffc8;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .login-btn {
+      margin-left: auto;
+      background: #00ffc8;
+      color: #000;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background: #00cfa0;
+    }
+
+    .profile-container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 30px;
+      background: #1a1a1a;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 255, 200, 0.2);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .profile-container h1 {
+      color: #00ffc8;
+      text-align: center;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #333;
+      margin: 20px auto 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .file-upload {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-top: 20px;
+    }
+
+    .form-group label {
+      color: #00ffc8;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #00ffc8;
+      background: #0f0f0f;
+      color: #00ffc8;
+      font-size: 15px;
+    }
+
+    .save-btn {
+      margin-top: 20px;
+      width: 100%;
+      background: #00ffc8;
+      color: #000;
+      padding: 10px;
+      border: none;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .save-btn:hover {
+      background: #00cfa0;
+    }
+
+    .stats {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .stats div {
+      margin-top: 8px;
+      font-size: 16px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="challenges.html">Challenges</a>
+      <a href="compiler.html">Compiler</a>
+      <a href="courses.html">Courses</a>
+      <a href="subscription.html">Subscription</a>
+      <a href="profile.html">Profile</a>
+    </div>
+    <a class="login-btn" href="login.html">Login</a>
+  </nav>
+
+  <div class="profile-container">
+    <h1>User Profile</h1>
+    <div class="profile-pic">Profile Picture</div>
+
+    <div class="file-upload">
+      <input type="file" id="profilePic" accept="image/*" />
+    </div>
+
+    <div class="form-group">
+      <label for="name">Username</label>
+      <input type="text" id="name" placeholder="Enter your name" />
+    </div>
+
+    <div class="form-group">
+      <label for="bio">Bio</label>
+      <textarea id="bio" placeholder="Tell us something about yourself..."></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" />
+    </div>
+
+    <button class="save-btn">Save Profile</button>
+
+    <div class="stats">
+      <h2>Your Stats</h2>
+      <div>Score: <strong>1200</strong></div>
+      <div>Rank: <strong>#25</strong></div>
+    </div>
+  </div>
+</body>
+</html>
